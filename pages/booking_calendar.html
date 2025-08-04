@@ -1,8 +1,55 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schedule your massage appointment online using our convenient booking calendar.">
+    <title>Book Now - Tranquil Touch Massage Therapy</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Calendly widget styles -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+<body>
 
-</header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Tranquil Touch</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Jake</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="booking_calendar.html" class="nav-link btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
 
-dropdown box for services -> hover over hourly avaliablility to show full block of time used
-calendar -> click day -> hourly avaliablility
-click in open avaliablility -> contact form and full details to book
-once booked -> redirects to calendar (filling in clicked avaliablility)
+    <header class="page-header">
+        <div class="container">
+            <h1>Schedule Your Appointment</h1>
+        </div>
+    </header>
+
+    <main class="container text-center">
+        <p>Booking your session is easy. Simply select your desired service and find a time that works for you in the calendar below. I look forward to seeing you!</p>
+
+        <!-- Calendly inline widget begin -->
+        <!-- IMPORTANT: Replace the URL with your personal Calendly scheduling link -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_USERNAME" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Visit our Instagram page"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                <a href="#" aria-label="Visit our Facebook page"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+            </div>
+            <p>© 2025 Tranquil Touch Massage Therapy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
