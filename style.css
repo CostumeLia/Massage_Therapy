@@ -236,7 +236,7 @@ img {
 
 /* --- Page Specific Styles (About, Services, Contact) --- */
 main.container {
-    padding-top: 60px;
+    padding-top: 85px;
     padding-bottom: 60px;
 }
 
@@ -358,15 +358,15 @@ footer {
         font-size: 3rem;
     }
     .services-grid {
-      grid-template-columns: repeat(3, 1fr); /* Tablet & Desktop: 3 columns */
+      grid-template-columns: repeat(3, 1fr); 
     }
     .about-content {
-        grid-template-columns: 1fr 2fr; /* Image on left, text on right */
+        grid-template-columns: 1fr 2fr; 
     }
     .service-detail {
-        grid-template-columns: 1fr 1.5fr; /* Image and text side-by-side */
+        grid-template-columns: 1fr 1.5fr; 
     }
-    /* Reverse order for every other service item for visual balance */
+   
     .service-detail:nth-child(even) {
         grid-template-columns: 1.5fr 1fr;
     }
@@ -375,19 +375,18 @@ footer {
         grid-row: 1;
     }
     .contact-layout {
-        grid-template-columns: 1.5fr 1fr; /* Form and info side-by-side */
+        grid-template-columns: 1.5fr 1fr; 
     }
 }
 
 /* --- Mobile Navigation Styles (CSS-Only) --- */
 
 .nav-toggle-input {
-  /* This checkbox is the engine, but we hide it from view */
   display: none;
 }
 
 .nav-toggle-label {
-  display: none; /* Hidden by default on desktop */
+  display: none; 
   cursor: pointer;
   padding: 10px;
   z-index: 1100;
@@ -399,7 +398,7 @@ footer {
   width: 25px;
   height: 3px;
   background-color: var(--heading-color);
-  transition: background-color 0s 0.3s; /* Delay transition */
+  transition: background-color 0s 0.3s;
 }
 
 .hamburger::before,
@@ -421,30 +420,29 @@ footer {
   bottom: -8px;
 }
 
-/* --- The Magic: Show menu and animate icon when the checkbox is checked --- */
 .nav-toggle-input:checked ~ .nav-menu {
-  display: flex; /* This shows the menu */
+  display: flex; 
 }
 
 .nav-toggle-input:checked ~ .nav-toggle-label .hamburger {
-  background-color: transparent; /* Make middle line of hamburger disappear */
+  background-color: transparent;
 }
 
 .nav-toggle-input:checked ~ .nav-toggle-label .hamburger::before {
   top: 0;
-  transform: rotate(45deg); /* Create the 'X' */
+  transform: rotate(45deg); 
 }
 
 .nav-toggle-input:checked ~ .nav-toggle-label .hamburger::after {
   bottom: 0;
-  transform: rotate(-45deg); /* Create the 'X' */
+  transform: rotate(-45deg); 
 }
 
 
 /* --- Media Query for Mobile --- */
 @media (max-width: 767px) {
   .nav-toggle-label {
-    display: block; /* Show the hamburger label on mobile */
+    display: block; 
   }
 
   .nav-menu {
@@ -452,7 +450,7 @@ footer {
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 65px; /* Adjust based on navbar height */
+    top: 65px; 
     left: 0;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
