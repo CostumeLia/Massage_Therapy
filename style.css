@@ -379,8 +379,74 @@ footer {
     }
 }
 
-/* Mobile Menu - requires JS for toggle functionality */
+/* --- Mobile Navigation Styles (CSS-Only) --- */
+
+.nav-toggle-input {
+  /* This checkbox is the engine, but we hide it from view */
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none; /* Hidden by default on desktop */
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 3px;
+  background-color: var(--heading-color);
+  transition: background-color 0s 0.3s; /* Delay transition */
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--heading-color);
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+/* --- The Magic: Show menu and animate icon when the checkbox is checked --- */
+.nav-toggle-input:checked ~ .nav-menu {
+  display: flex; /* This shows the menu */
+}
+
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger {
+  background-color: transparent; /* Make middle line of hamburger disappear */
+}
+
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger::before {
+  top: 0;
+  transform: rotate(45deg); /* Create the 'X' */
+}
+
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg); /* Create the 'X' */
+}
+
+
+/* --- Media Query for Mobile --- */
 @media (max-width: 767px) {
+  .nav-toggle-label {
+    display: block; /* Show the hamburger label on mobile */
+  }
+
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -392,18 +458,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
-  .nav-menu.active {
-    display: flex;
-  }
-
   .nav-item {
     margin: 1rem 0;
-    text-align: center;
-  }
-
-  /* Add a nav-toggle class to a button in HTML for this */
-  .nav-toggle {
-    display: block; /* Typically a hamburger icon */
-    /* Add styles for your hamburger icon here */
   }
 }
